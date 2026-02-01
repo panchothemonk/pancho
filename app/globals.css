@@ -1,26 +1,382 @@
-@import "tailwindcss";
+:root{
+  --bg: #FFF7E8;
+  --paper: #FFFDF7;
+  --ink: #121212;
+  --muted: rgba(18,18,18,.72);
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pink: #FF3DB8;
+  --pink2:#FF79D1;
+  --mint:#2CFFC7;
+  --bad:#FF5D7A;
+  --yellow:#FFE066;
+  --blue:#6EA8FF;
+
+  --stroke: 3px;
+  --r: 22px;
+
+  --shadow: 0 10px 0 rgba(18,18,18,.16);
+  --shadow2: 0 16px 0 rgba(18,18,18,.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  color: var(--ink);
+  font-family: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: var(--bg);
+  overflow-x:hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* subtle halftone texture ONLY (no faces) */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,61,184,.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 65% 30%, rgba(110,168,255,.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 35% 75%, rgba(44,255,199,.08) 0 2px, transparent 3px);
+  background-size: 28px 28px;
+  opacity:.8;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a{ color:inherit; text-decoration:none; }
+.container{ width:min(1100px, calc(100% - 34px)); margin:0 auto; }
+
+/* NAV */
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: var(--stroke) solid var(--ink);
+}
+.navInner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 0;
+  gap: 12px;
+}
+.brand{ display:flex; align-items:center; gap:10px; font-weight: 1000; }
+.logo{
+  width:38px;height:38px;border-radius:14px;
+  background: linear-gradient(135deg, var(--pink), var(--pink2));
+  border: var(--stroke) solid var(--ink);
+  box-shadow: var(--shadow);
+}
+.pill{
+  display:inline-flex; align-items:center;
+  padding:7px 12px;
+  border-radius:999px;
+  border: var(--stroke) solid var(--ink);
+  background: var(--yellow);
+  font-size:12px;
+  font-weight: 1000;
+}
+.links{ display:flex; gap:10px; flex-wrap:wrap; }
+.link{
+  padding:8px 12px;
+  border-radius:999px;
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  font-weight: 1000;
+  font-size: 13px;
+  box-shadow: var(--shadow);
+}
+.link:hover{ transform: translateY(-1px); }
+
+/* HERO */
+.hero{ padding: 26px 0 12px; }
+.grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
+@media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+
+.card{
+  border-radius: var(--r);
+  border: var(--stroke) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow2);
+  overflow:hidden;
+  position:relative;
+}
+.pad{ padding: 22px; }
+
+.kicker{
+  display:flex; align-items:center; gap:10px;
+  color: var(--muted);
+  font-weight: 1000;
+  font-size: 13px;
+}
+.dot{
+  width:10px;height:10px;border-radius:99px;
+  background: var(--pink);
+  border: 2px solid var(--ink);
+}
+
+h1{
+  margin: 10px 0;
+  font-size: clamp(30px, 4vw, 52px);
+  letter-spacing: -1.2px;
+  line-height: 1.02;
+}
+.sub{
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 70ch;
+}
+
+/* BUTTONS */
+.actions{ margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap; }
+.btn{
+  border-radius: 16px;
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  padding: 11px 14px;
+  font-weight: 1000;
+  font-size: 14px;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+}
+.btn:hover{ transform: translateY(-2px); }
+.btnPrimary{
+  background: linear-gradient(135deg, var(--pink), var(--pink2));
+}
+
+/* PANCHO BOARD */
+.portrait{
+  min-height: 340px;
+  background:
+    linear-gradient(180deg, rgba(255,61,184,.18), rgba(255,255,255,0)),
+    repeating-linear-gradient(45deg, rgba(18,18,18,.08) 0 8px, transparent 8px 16px);
+}
+.caption{
+  position:absolute; left:14px; bottom:14px;
+  border-radius: 16px;
+  padding: 10px 12px;
+  border: var(--stroke) solid var(--ink);
+  background: var(--yellow);
+  box-shadow: var(--shadow);
+  font-weight: 1000;
+}
+
+/* SECTIONS */
+.section{ padding: 22px 0 36px; }
+.head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:14px; flex-wrap:wrap; margin-bottom: 12px;
+}
+h2{ margin:0; font-size: clamp(18px, 2.6vw, 30px); }
+.desc{ color: var(--muted); font-size:14px; }
+
+/* STORY CARDS */
+.timeline{ display:grid; gap: 12px; }
+
+.moment{
+  border-radius: var(--r);
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  box-shadow: var(--shadow2);
+  cursor:pointer;
+}
+.moment:hover{ transform: translateY(-2px); }
+
+.mTop{
+  padding: 12px 14px;
+  display:flex; justify-content:space-between;
+  border-bottom: var(--stroke) solid var(--ink);
+}
+.badge{
+  display:inline-flex; gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border: var(--stroke) solid var(--ink);
+  font-size: 12px;
+  font-weight: 1000;
+}
+.good i{ background: var(--mint); }
+.bad i{ background: var(--bad); }
+
+.mBody{ padding: 14px; }
+.mBody h3{ margin:0 0 6px; font-size:16px; }
+.mBody p{ color: var(--muted); font-size:13.5px; }
+
+.quote{
+  margin-top:10px;
+  padding: 12px;
+  border-radius: 18px;
+  border: var(--stroke) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  font-weight: 1000;
+}
+
+/* EPISODES */
+.epGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 900px){ .epGrid{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px){ .epGrid{ grid-template-columns: 1fr; } }
+
+.ep{
+  border-radius: var(--r);
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  box-shadow: var(--shadow2);
+}
+.cover{
+  height: 120px;
+  background:
+    linear-gradient(135deg, rgba(255,61,184,.22), rgba(255,224,102,.36)),
+    repeating-linear-gradient(0deg, rgba(18,18,18,.08) 0 6px, transparent 6px 12px);
+  border-bottom: var(--stroke) solid var(--ink);
+}
+.meta{ padding: 14px; }
+.num{ font-size:12px; font-weight:1000; color: var(--muted); }
+.title{ font-weight: 1000; margin-top:6px; }
+.small{ font-size: 13px; color: var(--muted); }
+
+/* FOOTER */
+.footer{
+  padding: 28px 0 46px;
+  text-align:center;
+  border-top: var(--stroke) solid var(--ink);
+  background: var(--paper);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* STICKERS (Pancho everywhere, controlled) */
+.sticker{
+  position:absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 30px;
+  border: var(--stroke) solid var(--ink);
+  background: linear-gradient(135deg, var(--pink), var(--pink2));
+  box-shadow: var(--shadow2);
+  transform: rotate(-8deg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 1000;
+}
+/* Pancho images helpers */
+.panchoImg{
+  display:block;
+  width:100%;
+  height:auto;
+  user-select:none;
+}
+
+.panchoStickerImg{
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:30px;
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  box-shadow: var(--shadow2);
+  overflow:hidden;
+  transform: rotate(-8deg);
+}
+.panchoStickerImg img{ width:100%; height:100%; object-fit:cover; }
+
+.panchoRow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.panchoChip{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:10px 12px;
+  border-radius:18px;
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.panchoChipFace{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  min-height:34px;
+  border-radius:12px;
+  border: var(--stroke) solid var(--ink);
+  overflow:hidden;
+  background:#fff;
+}
+
+.panchoChipFace img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+/* keep portrait stickers from covering important content */
+.portrait { position: relative; }
+
+/* send stickers behind the caption and other foreground elements */
+.portrait .panchoStickerImg,
+.portrait .sticker{
+  z-index: 1;
+}
+
+/* keep caption above stickers */
+.portrait .caption{
+  z-index: 3;
+  position: absolute;
+}
+
+/* optional: let stickers fade a bit so Pancho stays readable */
+.portrait .panchoStickerImg,
+.portrait .sticker{
+  opacity: 0.92;
+}
+/* GOOD/BAD badge dot */
+.badge i{
+  width:12px;
+  height:12px;
+  border-radius:99px;
+  display:inline-block;
+  border: 2px solid var(--ink);
+  background: #fff;
+}
+.badge.good i{ background: var(--mint); }
+.badge.bad i{ background: var(--bad); }
+
+.panchoChipFace img{ width:100%; height:100%; object-fit:cover; }
+.panchoChipText{ font-weight:1000; font-size:13px; color: rgba(18,18,18,.8); }
+.navPancho {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 12px;
+  border: 3px solid #121212;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 10px 0 rgba(18,18,18,.16);
+  display: block;
+}
+.cover{
+  height: 220px;                 
+  border-radius: 18px;
+  border: 3px solid #121212;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 12px 0 rgba(18,18,18,.12);
+  display: grid;
+  place-items: center;
+}
+
+.coverImg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           
+  display: block;
+  padding: 10px;
 }
