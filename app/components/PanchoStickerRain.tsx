@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 
 type Sticker = {
   id: number;
-  x: number;      // percent
-  size: number;   // px
-  delay: number;  // seconds
+  x: number; // percent
+  size: number; // px
+  delay: number; // seconds
+  duration: number; // seconds
+  drift: number; // px (left/right sway)
   vibe: "float" | "shake";
   kind: "face" | "quote";
   content?: string;
@@ -19,11 +21,15 @@ export default function PanchoStickerRain() {
   const [stickers, setStickers] = useState<Sticker[]>([]);
 
   useEffect(() => {
-    const generated: Sticker[] = Array.from({ length: 14 }).map((_, i) => ({
+    const COUNT = 18;
+
+    const generated: Sticker[] = Array.from({ length: COUNT }).map((_, i) => ({
       id: i,
-      x: Math.random() * 90 + 5,
-      size: Math.random() * 26 + 48,
-      delay: Math.random() * 4,
+      x: Math.random() * 92 + 4, // spread across width
+      size: 44 + Math.random() * 34, // 44–78px
+      delay: Math.random() * 3.5, // stagger start
+      duration: 6 + Math.random() * 7, // 6–13s (prevents syncing)
+      drift: Math.random() * 40 - 20, // -20..20px side drift (Step 4)
       vibe: Math.random() > 0.6 ? "shake" : "float",
       kind: Math.random() > 0.55 ? "face" : "quote",
       content: QUOTES[Math.floor(Math.random() * QUOTES.length)],
@@ -43,23 +49,27 @@ export default function PanchoStickerRain() {
       }}
     >
       {stickers.map((s) => {
-        const vibeAnim = s.vibe === "shake"
-          ? { rotate: [-2, 2, -2] }
-          : { y: [-6, 6, -6] };
+        const vibeAnim =
+          s.vibe === "shake" ? { rotate: [-2, 2, -2] } : { y: [-6, 6, -6] };
 
-        // IMPORTANT: no "ease" string here (Cloudflare TS doesn't like it)
-        const vibeTrans = s.vibe === "shake"
-          ? { duration: 0.35, repeat: Infinity }
-          : { duration: 0.9, repeat: Infinity };
+        // keep this simple to avoid TS deploy issues
+        const vibeTrans =
+          s.vibe === "shake"
+            ? { duration: 0.35, repeat: Infinity }
+            : { duration: 0.9, repeat: Infinity };
 
         return (
           <motion.div
             key={s.id}
-            initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 460, opacity: 1 }}
+            initial={{ y: -90, opacity: 0 }}
+            animate={{
+              y: 460,
+              x: [0, s.drift, 0], // ✅ Step 4: subtle sideways drift
+              opacity: 1,
+            }}
             transition={{
-              duration: 10,
               delay: s.delay,
+              duration: s.duration,
               repeat: Infinity,
             }}
             style={{
@@ -93,6 +103,7 @@ export default function PanchoStickerRain() {
                     fontSize: 13,
                     boxShadow: "0 10px 0 rgba(18,18,18,.12)",
                     whiteSpace: "nowrap",
+                    filter: "drop-shadow(0 6px 0 rgba(0,0,0,.10))",
                   }}
                 >
                   {s.content}
