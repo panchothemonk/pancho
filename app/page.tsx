@@ -412,109 +412,125 @@ export default function Page() {
 
             <div className="epGrid">
   <Episode
-    num="Episode 01"
-    title="Pancho compra el dip"
-    desc="He buys the dip. It keeps dipping. It wasn’t the dip."
-    thumb="/episodes/ep-01.png"
-  />
+  num="Episode 01"
+  title="Pancho compra el dip"
+  desc="He buys the dip. It keeps dipping. It wasn’t the dip."
+  thumb="/episodes/ep-01.png"
+  url="https://youtube.com/shorts/L0WCgr1eLlg?feature=share"
+/>
 
-  <Episode
-    num="Episode 02"
-    title="Pancho descubre que $0.00"
-    desc="The dev vanishes. Wallet empty. It was his primo."
-    thumb="/episodes/ep-02.png"
-  />
+<Episode
+  num="Episode 02"
+  title="Pancho descubre que $0.00"
+  desc="The dev vanishes. Wallet empty. It was his primo."
+  thumb="/episodes/ep-02.png"
+  url="https://youtube.com/shorts/j3fjtHJ2MfQ?feature=share"
+/>
 
-  <Episode
-    num="Episode 03"
-    title="Pancho intenta explicar crypto"
-    desc="Family dinner. Charts come out. Nobody asked."
-    thumb="/episodes/ep-03.png"
-  />
+<Episode
+  num="Episode 03"
+  title="Pancho intenta explicar crypto"
+  desc="Family dinner. Charts come out. Nobody asked."
+  thumb="/episodes/ep-03.png"
+  url="https://youtube.com/shorts/jTcSQNI546w?feature=share"
+/>
 
-  <Episode
-    num="Episode 04"
-    title="Pancho dice “I’m early”"
-    desc="He buys confidently. It was the literal top."
-    thumb="/episodes/ep-04.png"
-  />
+<Episode
+  num="Episode 04"
+  title='Pancho dice “I’m early”'
+  desc="He buys confidently. It was the literal top."
+  thumb="/episodes/ep-04.png"
+  url="https://youtube.com/shorts/XHpuSsLzCfU?feature=share"
+/>
 
-  <Episode
-    num="Episode 05"
-    title="Pancho corre de ICE"
-    desc="Paid taxes in crypto. Timing was terrible."
-    thumb="/episodes/ep-05.png"
-  />
+<Episode
+  num="Episode 05"
+  title="Pancho corre de ICE"
+  desc="Paid taxes in crypto. Timing was terrible."
+  thumb="/episodes/ep-05.png"
+  url="https://youtube.com/shorts/TzFV9kU1uQw?feature=share"
+/>
 
-  <Episode
-    num="Episode 06"
-    title="Pancho entra al gym motivado"
-    desc="New routine. Seven minutes later, he leaves."
-    thumb="/episodes/ep-06.png"
-  />
+<Episode
+  num="Episode 06"
+  title="Pancho entra al gym motivado"
+  desc="New routine. Seven minutes later, he leaves."
+  thumb="/episodes/ep-06.png"
+  url="https://youtube.com/shorts/GruL9OT-sDc?feature=share"
+/>
 
-  <Episode
-    num="Episode 07"
-    title="Pancho intenta comer sano"
-    desc="Salad plan fails. Ends up crying at Taco Bell."
-    thumb="/episodes/ep-07.png"
-  />
+<Episode
+  num="Episode 07"
+  title="Pancho intenta comer sano"
+  desc="Salad plan fails. Ends up crying at Taco Bell."
+  thumb="/episodes/ep-07.png"
+  url="https://youtube.com/shorts/QdgGjeMcgxY?feature=share"
+/>
 
-  <Episode
-    num="Episode 08"
-    title="Pancho se despierta temprano"
-    desc="Big plans. Zero productivity. Back to bed."
-    thumb="/episodes/ep-08.png"
-  />
+<Episode
+  num="Episode 08"
+  title="Pancho se despierta temprano"
+  desc="Big plans. Zero productivity. Back to bed."
+  thumb="/episodes/ep-08.png"
+  url="https://youtube.com/shorts/vUh-WG2s-Ts?feature=share"
+/>
 
-  <Episode
-    num="Episode 09"
-    title="Pancho vende en pérdida"
-    desc="He sells for peace. Token does 10x right after."
-    thumb="/episodes/ep-09.png"
-  />
+<Episode
+  num="Episode 09"
+  title="Pancho vende en pérdida"
+  desc="He sells for peace. Token does 10x right after."
+  thumb="/episodes/ep-09.png"
+  url="https://youtube.com/shorts/LfRR8Luu6cc?feature=share"
+/>
 
-  <Episode
-    num="Episode 10"
-    title="Todo va a estar bien"
-    desc="He stares at the ceiling. Says it anyway."
-    thumb="/episodes/ep-10.png"
-  />
+<Episode
+  num="Episode 10"
+  title="Todo va a estar bien"
+  desc="He stares at the ceiling. Says it anyway."
+  thumb="/episodes/ep-10.png"
+  url="https://youtube.com/shorts/76j7jGMMiVY?feature=share"
+/>
 
-  <Episode
-    num="Episode 11"
-    title="Pancho se hace rico en crypto"
-    desc="Buys the top. Wins anyway. Still tired."
-    thumb="/episodes/ep-11.png"
-  />
+<Episode
+  num="Episode 11"
+  title="Pancho se hace rico en crypto"
+  desc="Buys the top. Wins anyway. Still tired."
+  thumb="/episodes/ep-11.png"
+  url="https://youtube.com/shorts/4o8kwPFSTLk?feature=share"
+/>
 
-  <Episode
-    num="Episode 12"
-    title="Pancho se vuelve viral"
-    desc="Brushes teeth. Internet explodes. He doesn’t care."
-    thumb="/episodes/ep-12.png"
-  />
+<Episode
+  num="Episode 12"
+  title="Pancho se vuelve viral"
+  desc="Brushes teeth. Internet explodes. He doesn’t care."
+  thumb="/episodes/ep-12.png"
+  url="https://youtube.com/shorts/HQzVK5mrPho?feature=share"
+/>
 
-  <Episode
-    num="Episode 13"
-    title="Pancho y Steve"
-    desc="Backstage chaos. Money everywhere. Pancho stays bored."
-    thumb="/episodes/ep-13.png"
-  />
+<Episode
+  num="Episode 13"
+  title="Pancho y Steve"
+  desc="Backstage chaos. Money everywhere. Pancho stays bored."
+  thumb="/episodes/ep-13.png"
+  url="https://youtube.com/shorts/ycdltoL9V3c?feature=share"
+/>
 
-  <Episode
-    num="Episode 14"
-    title="Pancho abre OnlyFans"
-    desc="Checks earnings. Expectations vs reality. Awkward silence."
-    thumb="/episodes/ep-14.png"
-  />
+<Episode
+  num="Episode 14"
+  title="Pancho abre OnlyFans"
+  desc="Checks earnings. Expectations vs reality. Awkward silence."
+  thumb="/episodes/ep-14.png"
+  url="https://youtube.com/shorts/Y3sS1MJC0ac?feature=share"
+/>
 
-  <Episode
-    num="Episode 15"
-    title="Pancho y Tekashi 69"
-    desc="Loud party. Flashy phones. Pancho unimpressed."
-    thumb="/episodes/ep-15.png"
-  />
+<Episode
+  num="Episode 15"
+  title="Pancho y Tekashi 69"
+  desc="Loud party. Flashy phones. Pancho unimpressed."
+  thumb="/episodes/ep-15.png"
+  url="https://youtube.com/shorts/sfL3I12UReM?feature=share"
+/>
+
 </div>
 
           </div>
@@ -735,38 +751,50 @@ function StoryCard(props: { chapter: Chapter; index: number; unlocked: boolean; 
     </motion.article>
   );
 }
-function Episode(props: { num: string; title: string; desc: string; thumb: string }) {
+function Episode(props: {
+  num: string;
+  title: string;
+  desc: string;
+  thumb: string;
+  url: string;
+}) {
   return (
-    <motion.article
+    <motion.a
+      href={props.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="ep"
-      initial={{ opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
-      whileHover={{ y: -6, rotate: -0.3 }}
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+        display: "block",
+        cursor: "pointer",
+      }}
+      whileHover={{ y: -6, scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
     >
-      <motion.div
-        className="cover"
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      >
-        <motion.img
+      <div className="cover">
+        <img
           src={props.thumb}
           alt={props.title}
-          className="coverImg"
-          whileHover={{ scale: 1.06 }}
-          transition={{ type: "spring", stiffness: 260, damping: 18 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            display: "block",
+          }}
         />
-      </motion.div>
+      </div>
 
       <div className="meta">
         <div className="num">{props.num}</div>
         <div className="title">{props.title}</div>
         <div className="small">{props.desc}</div>
       </div>
-    </motion.article>
+    </motion.a>
   );
 }
+
 
 
 
