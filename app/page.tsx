@@ -546,7 +546,16 @@ export default function Page() {
                   The world is loud. Pancho says “ok.”
                 </p>
               </div>
-              <span className="pill">who is pancho</span>
+              <a
+  href="https://www.youtube.com/@Panchojourney"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="pill"
+  style={{ textDecoration: "none", cursor: "pointer" }}
+>
+  who is pancho
+</a>
+
             </div>
           </div>
         </section>
