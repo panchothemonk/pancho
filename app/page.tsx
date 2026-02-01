@@ -266,7 +266,7 @@ export default function Page() {
                   </div>
 
                   <h1>
-                    Pancho’s journey
+                    Pancho’s life
                     <br /> good days. bad days. same Pancho.
                   </h1>
 
@@ -328,7 +328,7 @@ export default function Page() {
 
   <div className="caption">
     <strong>Pancho</strong>
-    <span> • no bs • fed up • still vibing</span>
+    <span> • sin ganas • fed up • still vibing • to the moon</span>
   </div>
 </motion.div>
 
