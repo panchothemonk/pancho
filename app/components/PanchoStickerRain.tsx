@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 type Sticker = {
   id: number;
-  x: number;
-  size: number;
-  delay: number;
+  x: number;      // percent
+  size: number;   // px
+  delay: number;  // seconds
   vibe: "float" | "shake";
   kind: "face" | "quote";
   content?: string;
@@ -43,15 +43,14 @@ export default function PanchoStickerRain() {
       }}
     >
       {stickers.map((s) => {
-        const vibeAnim =
-          s.vibe === "shake"
-            ? { rotate: [-2, 2, -2] }
-            : { y: [-6, 6, -6] };
+        const vibeAnim = s.vibe === "shake"
+          ? { rotate: [-2, 2, -2] }
+          : { y: [-6, 6, -6] };
 
-        const vibeTrans =
-          s.vibe === "shake"
-            ? { duration: 0.35, repeat: Infinity, ease: "easeInOut" }
-            : { duration: 0.9, repeat: Infinity, ease: "easeInOut" };
+        // IMPORTANT: no "ease" string here (Cloudflare TS doesn't like it)
+        const vibeTrans = s.vibe === "shake"
+          ? { duration: 0.35, repeat: Infinity }
+          : { duration: 0.9, repeat: Infinity };
 
         return (
           <motion.div
@@ -62,7 +61,6 @@ export default function PanchoStickerRain() {
               duration: 10,
               delay: s.delay,
               repeat: Infinity,
-              ease: "linear",
             }}
             style={{
               position: "absolute",
