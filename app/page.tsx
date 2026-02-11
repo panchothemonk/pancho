@@ -235,7 +235,23 @@ export default function Page() {
               <a className="link" href="#story">Story</a>
               <a className="link" href="#game">Game</a>
               <a className="link" href="#episodes">Episodes</a>
-              
+              <a
+  className="link"
+  href="https://memes.panchoverse.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Memes
+</a>
+
+<a
+  className="link"
+  href="https://pfp.panchoverse.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Pfp
+</a>
             </div>
           </div>
 
