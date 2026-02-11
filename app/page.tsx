@@ -232,7 +232,7 @@ export default function Page() {
 
 
             <div className="links">
-              <a className="link" href="#story">Story</a>
+              
               <a className="link" href="#game">Game</a>
               <a className="link" href="#episodes">Episodes</a>
               <a
