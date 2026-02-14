@@ -569,15 +569,37 @@ export default function Page() {
                   The world is loud. Pancho says “ok.”
                 </p>
               </div>
-              <a
-  href="https://www.youtube.com/@Panchojourney"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="pill"
-  style={{ textDecoration: "none", cursor: "pointer" }}
->
-  who is pancho
-</a>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+  <a
+    href="https://www.youtube.com/@Panchojourney"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="pill"
+    style={{ textDecoration: "none", cursor: "pointer" }}
+  >
+    YouTube
+  </a>
+
+  <a
+    href="https://x.com/Panchomonks"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="pill"
+    style={{ textDecoration: "none", cursor: "pointer" }}
+  >
+    X
+  </a>
+
+  <a
+    href="https://t.me/panchodegen"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="pill"
+    style={{ textDecoration: "none", cursor: "pointer" }}
+  >
+    Telegram
+  </a>
+</div>
 
             </div>
           </div>
