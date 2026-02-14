@@ -233,7 +233,14 @@ export default function Page() {
 
             <div className="links">
               
-              <a className="link" href="#game">Game</a>
+              <a
+  className="link"
+  href="https://arena.panchoverse.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Arena
+</a>
               <a className="link" href="#episodes">Episodes</a>
               <a
   className="link"
@@ -432,7 +439,7 @@ export default function Page() {
   title="Pancho compra el dip"
   desc="He buys the dip. It keeps dipping. It wasn’t the dip."
   thumb="/episodes/ep-01.png"
-  url="https://youtube.com/shorts/L0WCgr1eLlg?feature=share"
+  url="https://www.youtube.com/shorts/VFHHD1TbLS0"
 />
 
 <Episode
@@ -440,7 +447,7 @@ export default function Page() {
   title="Pancho descubre que $0.00"
   desc="The dev vanishes. Wallet empty. It was his primo."
   thumb="/episodes/ep-02.png"
-  url="https://youtube.com/shorts/j3fjtHJ2MfQ?feature=share"
+  url="https://www.youtube.com/shorts/Gg7VQ975U_I"
 />
 
 <Episode
@@ -464,7 +471,7 @@ export default function Page() {
   title="Pancho corre de ICE"
   desc="Paid taxes in crypto. Timing was terrible."
   thumb="/episodes/ep-05.png"
-  url="https://youtube.com/shorts/TzFV9kU1uQw?feature=share"
+  url="https://www.youtube.com/shorts/C4WwJzSoeak"
 />
 
 <Episode
@@ -496,7 +503,7 @@ export default function Page() {
   title="Pancho vende en pérdida"
   desc="He sells for peace. Token does 10x right after."
   thumb="/episodes/ep-09.png"
-  url="https://youtube.com/shorts/LfRR8Luu6cc?feature=share"
+  url="https://www.youtube.com/shorts/imnHlpP-ZcM"
 />
 
 <Episode
